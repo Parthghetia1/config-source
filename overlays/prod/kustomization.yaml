@@ -34,6 +34,16 @@ patches:
     - op: replace
       path: /subjects/0/name
       value: deploy-bot@foo-corp.com
+- target:
+    kind: Deployment
+    name: hello-world
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: hello-world-prod
+    - op: replace
+      path: /spec/replicas
+      value: 5
 commonLabels:
   environment: prod
 # [END anthosconfig_multi_environments_kustomize_config_source_overlays_prod_kustomization] 
