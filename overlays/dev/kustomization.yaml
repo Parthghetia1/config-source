@@ -20,30 +20,12 @@ bases:
 patches:
 # ServiceAccount - make name unique per environ 
 - target:
-    kind: ServiceAccount
-    name: foo-ksa
-  patch: |-
-    - op: replace
-      path: /metadata/name
-      value: foo-ksa-dev
-# Pod creators - give all FooCorp developers access 
-- target:
-    kind: RoleBinding
-    name: pod-creators
-  patch: |-
-    - op: replace
-      path: /subjects/0/name
-      value: developers-all@foo-corp.com
-- target:
     kind: Deployment
-    name: hello-world
+    name: frontend
   patch: |-
     - op: replace
-      path: /metadata/name
-      value: hello-world-prod
-    - op: replace
-      path: /spec/replicas
-      value: 3
+      path: /spec/containers/image
+      value: gcr.io/GOOGLE_CLOUD_PROJECT/frontend@COMMIT_SHA
 commonLabels:
   environment: dev
 # [END anthosconfig_multi_environments_kustomize_config_source_overlays_dev_kustomization] 
