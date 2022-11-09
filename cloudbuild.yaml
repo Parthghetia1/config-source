@@ -31,8 +31,7 @@ steps:
 
     kustomize build overlays/dev --output config-dev/
     cd config-dev 
-
-    rm README.md 
+ 
     echo "Update: ${SHORT_SHA}" > README.md
 
     git add . && \
@@ -59,7 +58,6 @@ steps:
     kustomize build overlays/prod --output config-prod/
     cd config-prod 
 
-    rm README.md 
     echo "Update: ${SHORT_SHA}" > README.md
 
     git add . && \
