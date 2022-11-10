@@ -9,7 +9,7 @@ patches:
     name: frontend
   patch: |-
     - op: replace
-      path: /spec/template/spec/image
+      path: /spec/template/spec/containers/0/image
       value: gcr.io/dev-anthos-online-boutique/frontend@sha256:39d62463c96de5bede2e9c71fde4847366c84a8e36b6a49f8d4eb39cf335585e
 commonLabels:
   environment: dev
