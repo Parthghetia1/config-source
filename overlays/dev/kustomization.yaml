@@ -10,7 +10,7 @@ patches:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/image
-      value: gcr.io/dev-anthos-online-boutique/frontend@sha256:782cee10b929ad944cdc8b4c070d1a94c63c88b3591366443ae1115521df0e94
+      value: gcr.io/dev-anthos-online-boutique/frontend@sha256:3b3f69f59e3ae4e777dd238b10b9efc53602b6b1325377d5234e7f3030f2a0c1
 commonLabels:
   environment: dev
 # [END anthosconfig_multi_environments_kustomize_config_source_overlays_dev_kustomization] 
